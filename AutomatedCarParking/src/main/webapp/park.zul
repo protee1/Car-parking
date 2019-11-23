@@ -1,0 +1,6 @@
+<?page title="parking page"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+<window id="park" border="normal" title="Parking"
+apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.carpark.viewmodel.')"
+></window>
+</zk>

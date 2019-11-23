@@ -1,0 +1,86 @@
+<?page title=" Owner page"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+<window title="User page" border="none" width="800px"
+apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.carpark.viewmodel.OwnerViewModel')" >
+
+
+<grid>
+<columns>
+<column></column>
+<column></column>
+</columns>
+<rows>
+<row>
+User Name:
+<textbox id="ownername" hflex="1" value="@save(vm.owners.ownerName)"></textbox>
+</row>
+<row>
+Gender:
+<textbox id="ownergender" hflex="1" value="@save(vm.owners.ownerGender)"></textbox>
+</row>
+<row>
+Email:
+<textbox id="owneremail" hflex="1" value="@save(vm.owners.ownerEmail)"></textbox>
+</row>
+<row>
+Phone:
+<textbox id="ownerphone" hflex="1" value="@save(vm.owners.ownerPhone)"></textbox>
+</row>
+<row>
+ZIP code:
+<textbox id="ownerzipcode" hflex="1" value="@save(vm.owners.ownerZipCode)"></textbox>
+</row>
+<row>
+Age:
+<textbox id="ownerage" hflex="1" value="@save(vm.owners.ownerAge)"></textbox>
+</row>
+<row>
+Identity
+<textbox id="owneridentity" hflex="1" value="@save(vm.owners.ownerIdentity)"></textbox>
+</row>
+</rows>
+</grid>
+<listbox model="@bind(vm.listOwners)" id="mylbox">
+<listhead>
+<listheader label="Id"></listheader>
+<listheader label="Name"></listheader>
+<listheader label="Gender"></listheader>
+<listheader label="Email"></listheader>
+<listheader label="Phone"></listheader>
+<listheader label="Zip code"></listheader>
+<listheader label="Age"></listheader>
+<listheader label="Identity"></listheader>
+</listhead>
+<template name="model">
+<listitem>
+<listcell>
+<textbox inplace="true"  value="@bind(each.ownerId)"></textbox>
+</listcell>
+<listcell>
+<textbox inplace="true" value="@bind(each.ownerName)"></textbox>
+</listcell>
+<listcell >
+<textbox inplace="true" value="@bind(each.ownerGender)"></textbox>
+</listcell>
+<listcell>
+<textbox inplace="true" value="@bind(each.ownerEmail)"></textbox>
+</listcell>
+<listcell>
+<textbox inplace="true" value="@bind(each.ownerZipCode)"></textbox>
+</listcell>
+<listcell>
+<textbox inplace="true" value="@bind(each.ownerAge)" ></textbox>
+</listcell>
+<listcell>
+<textbox inplace="true" value="@bind(each.ownerIdentity)" ></textbox>
+</listcell>
+<listcell>
+<button label="DELETE" onClick="@command('deletion',del=each)"></button>
+<separator></separator>
+<button label="UPDATE" onClick="@command('updating',up=each)"></button>
+</listcell>
+</listitem>
+</template>
+</listbox>
+</window>
+</zk>

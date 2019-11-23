@@ -1,0 +1,47 @@
+<?page title="ZK MVVM" contentType="text/html;charset=UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+<window id="carDetails" border="none"
+apply="org.zkoss.bind.BindComposer"
+ viewModel="@id('vm') @init('com.carpark.viewmodel.CarViweModel')">
+
+<grid>
+<columns>
+<column></column>
+<column></column>
+</columns>
+<rows>
+<row>
+Car Name:
+<textbox id="cname" hflex="1" value="@save(vm.cars.carName)"></textbox>
+</row>
+<row>
+Tin No:
+<textbox id="tno"  hflex="1" value="@save(vm.cars.tinNo)"></textbox>
+</row>
+<row>
+Car Model:
+<textbox id="cmodel" hflex="1" value="@save(vm.cars.carModel)"/>
+</row>
+<row>
+Plack No:
+<textbox id="pno" hflex="1" value="@save(vm.cars.plkNo)"/>
+</row>
+<row>
+Car color:
+<textbox id="ccolor" hflex="1" value="@save(vm.cars.carCloloro)"/>
+</row>
+<row>
+Car Size:
+<textbox id="dob" hflex="1" value="@save(vm.cars.carSize)"/>
+</row>
+<row>
+<hlayout>
+<button id="save" label="SAVE" onClick="@command('saveButton')"></button>
+</hlayout>
+</row>
+</rows>
+</grid>
+
+
+</window>
+</zk>
